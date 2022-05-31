@@ -112,9 +112,9 @@ if __name__ == "__main__":
   days = list(set(list(map(lambda x: x.date, nasa_files))))
 
 
-  # mes = sys.argv[1]
-  # print(mes)
-  # days = list(filter(lambda x: x.find(str(mes))!=-1,days))
+  mes = sys.argv[1]
+  print(mes)
+  days = list(filter(lambda x: x.find(str(mes))!=-1,days))
 
 
   for day in days:
@@ -146,6 +146,12 @@ if __name__ == "__main__":
 
       # guardando
       ndvi.to_netcdf(f"{save_path}/{name_file}.nc")
+
+      # cerrando
+      close_list = list(map(
+                      lambda x: x.rds.close(),
+                      list(filter(lambda x: x.date == day, nasa_files))
+                    ))
 
       print('->OK')
 

@@ -120,7 +120,10 @@ if __name__ == '__main__':
     qa_nc_files = list(map(lambda x: qa_procesos(nc_file=x,list_qa=list_qa), nc_files))
 
     # Integrando archivos
+    #rds_concat = xarray.concat( qa_nc_files, dim="time" )
     rds = xarray.concat( qa_nc_files, dim="time" )
+    # reproyeccion
+    #rds = rds_concat.rio.reproject("EPSG:4326")
 
     # preparando para guardar
     mordinal_list = list(map(lambda x: datetime.fromordinal(x),rds['time'].data))

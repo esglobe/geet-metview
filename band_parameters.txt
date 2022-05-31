@@ -1,0 +1,17 @@
+&parameter
+  name            = QA_EVI
+  out_name        = evi
+  standard_name   = 250m 16 days NDVI
+  units           = " " 
+  missing_value   = 0
+  valid_min       = 0
+  valid_max       = 1
+/
+&parameter
+  name            = QA_NDVI
+  out_name        = ndvi
+  standard_name   = 250m 16 days NDVI
+  units           = " " 
+  missing_value   = 0
+  valid_min       = 0
+  valid_max       = 1
