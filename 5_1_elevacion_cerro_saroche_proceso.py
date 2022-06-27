@@ -7,12 +7,13 @@
 
 from rioxarray.merge import merge_datasets
 from pyproj.crs import CRS
+import warnings
 import xarray
 import sys
 import os
 
 # Crewacion del objeto xarray
-def create_dataset(da, band_name = 'variable'):
+def create_dataset(da, band_name = 'variable',crs='4326'):
   """
   Funcion para la creacion del dataset
   """
@@ -28,11 +29,14 @@ def create_dataset(da, band_name = 'variable'):
       attrs = da.attrs
       )
 
-  ds.rio.write_crs(CRS.from_epsg(4326))
+  ds = ds.rio.write_crs(crs)
 
   return ds
 
+#----------
 if __name__ == '__main__':
+
+  warnings.filterwarnings("ignore")
 
   print('-> Cargando datos')
   path_elevacion = './SRTMGL3/files/'
@@ -41,11 +45,13 @@ if __name__ == '__main__':
   data_file = list(map(lambda x: xarray.open_rasterio(x), elevacion_files))
 
   print('-> Generando formato')
-  data_format = list(map(lambda x: create_dataset(x, 'elevacion'), data_file))
+  crs_elevacion = data_file[0].rio.crs
+  data_format = list(map(lambda x: create_dataset(x, 'elevacion',crs=crs_elevacion), data_file))
 
   print('-> Integrando data')
   # Integrando data
   rds_elevacion = merge_datasets(data_format)
+  rds_elevacion = rds_elevacion.rio.write_crs(crs_elevacion)
 
   print(rds_elevacion.rio.crs)
 
