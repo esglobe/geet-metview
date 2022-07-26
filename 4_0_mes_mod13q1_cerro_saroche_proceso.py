@@ -2,7 +2,7 @@ import subprocess
 import pandas as pd
 from datetime import datetime
 
-dates = pd.date_range('2012-01-01','2022-06-01',freq='M')
+dates = pd.date_range('2022-01-01','2022-08-01',freq='M')
 meses = list(map(lambda x: x.strftime('%Y-%m') , dates))
 
 
