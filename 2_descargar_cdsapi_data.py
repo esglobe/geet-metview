@@ -10,7 +10,7 @@ import cdsapi
 import numpy as np
 
 # Variables iniciales
-year_start=2022
+year_start=1970
 year_end=2022
 months = ['01', '02', '03','04', '05', '06','07', '08', '09','10', '11', '12']
 variable = ['total_precipitation']
