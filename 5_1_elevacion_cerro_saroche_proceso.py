@@ -12,7 +12,7 @@ import xarray
 import sys
 import os
 
-# Crewacion del objeto xarray
+# Creacion del objeto xarray
 def create_dataset(da, band_name = 'variable',crs='4326'):
   """
   Funcion para la creacion del dataset

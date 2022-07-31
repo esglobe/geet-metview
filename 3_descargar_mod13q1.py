@@ -11,6 +11,23 @@
 #  https://lpdaac.usgs.gov/products/mod13q1v061/
 
 #---
+class LAADS_FILE:
+
+    """
+    Clase par la identificacion de productos LAADS
+    """
+  
+    @classmethod
+    def generate(cls,file):
+
+        from datetime import datetime
+
+        cls.file = file
+        cls.date = datetime.strptime(cls.file.split('.')[1].split('T')[0],'%Y-%m-%d')
+
+        return cls
+
+#---
 def NASA_response(file,NASA_TOKEN):
     """
     Funcion para la descarga de la data en el directorio
@@ -44,8 +61,24 @@ if __name__ == "__main__":
 
     # Cargando json
     import json
+    import os
 
-    json_file = json.load(open('./LAADS_query_mod13q1.json'))
+    # directorio
+    dir = './LAADS_querys/'
+
+    # archivos
+    files = os.listdir(dir)
+
+    # lista de achvos
+    files_list = list(map( LAADS_FILE.generate, files))
+
+    # fecha actualizacion
+    max_date = max( list(map(lambda x: x.date,files_list)) )
+
+    # archivo actual
+    file_actualizado = dir + list(filter(lambda x: x.date == max_date, files_list))[0].file
+    
+    json_file = json.load(open(file_actualizado))
     archivos = list(filter( lambda x: x!='query' , list(json_file.keys()) ))
 
     files = [ json_file[x]['url'] for x in archivos ]
