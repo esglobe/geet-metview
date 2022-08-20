@@ -8,6 +8,14 @@
 
 import cdsapi
 import numpy as np
+import yaml
+
+# Definiendo variables
+with open('./config.yml') as stream:
+    config = yaml.safe_load(stream)
+
+TOKEN = config['CDSAPI_TOKEN']
+
 
 # Variables iniciales
 year_start=1970
@@ -18,7 +26,7 @@ park_area = [10.41, -70.03, 9.91, -69.23] # S,W,N,E
 
 # api cdsapi
 cds = cdsapi.Client("https://cds.climate.copernicus.eu/api/v2",
-                    "40779" + ":" + "142accd6-9497-45c2-b607-de990bd8727c")
+                    "40779" + ":" + TOKEN)
                     
 cds.retrieve('reanalysis-era5-land-monthly-means',
                 {

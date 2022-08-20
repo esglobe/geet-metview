@@ -87,7 +87,7 @@ class NASA_HDF_CARACTERISTICAS:
 if __name__ == "__main__":
 
   # lectura del poligono
-  park_boundary = geopandas.read_file('./cerro_saroche/poligono_cerro_saroche/cerro_saroche.shp')
+  park_boundary = geopandas.read_file('./cerro_saroche/polygons/park/cerro_saroche.shp')
 
   # buscando archivos
   dir = './MOD13Q1'

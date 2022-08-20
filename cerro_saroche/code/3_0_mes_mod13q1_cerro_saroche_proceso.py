@@ -8,4 +8,4 @@ meses = list(map(lambda x: x.strftime('%Y-%m') , dates))
 
 for mes in meses:
 
-  response = subprocess.run(["python3", "./4_1_mod13q1_cerro_saroche_proceso.py", mes])
+  response = subprocess.run(["python3", "./3_1_mod13q1_cerro_saroche_proceso.py", mes])
