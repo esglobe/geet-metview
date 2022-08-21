@@ -100,7 +100,7 @@ El proyecto permite replicar el estudio en parques venezolanos distinto al Cerro
 6. En **7_polygon_data.ipynb** se realiza la inserción de los polígonos en MongoDB.
 
 
-### El Parque Cerro Saroche
+### El Parque Nacional Cerro Saroche
 
 Los procesos desarrollados para el tratamiento de la información rorrespondientes al parque Cerro Saroche estan disponibles en **/cerro_saroche/code/**:
 
@@ -133,7 +133,7 @@ Los procesos desarrollados para el tratamiento de la información rorrespondient
 ![NDVI regrillado Parque Cerro Saroche](./cerro_saroche/figures/regrillado_ndvi_mes.png)
 
 
-### El Terepaima
+### El Parque Nacional Terepaima
 
 Los procesos desarrollados para el parque Terepaima estan disponibles en **/terepaima/code/**:
 
