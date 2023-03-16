@@ -11,7 +11,7 @@
 
 ### General
 
-Los procesos han sido diseñados con el objeto de descargar y procesar datos abiertos disponibles en:
+Los procesos han sido diseñados con el objeto de descargar y tratar datos abiertos disponibles en:
 
 * La colección **WCMC/WDPA/current/polygons** de [Earth Engine Data Catalog](https://developers.google.com/earth-engine/datasets/catalog/WCMC_WDPA_current_polygons).
 
@@ -31,6 +31,9 @@ Primeramente, se recomienda generar el environment del proyecto utilizando:
 
 ~~~
 conda env create -f environment.yml
+conda env create -f ./environment.yml
+conda activate gee_metview
+conda env update --file ./environment.yml --prune
 ~~~
 
 Posteriormenmte, es necesario la creación de un archivo **config.yml** que disponga de las siguientes variables para iniciar sesión en la NASA, Copernicus y MongoDb:
@@ -102,7 +105,7 @@ El proyecto permite replicar el estudio en parques venezolanos distinto al Cerro
 
 ### El Parque Nacional Cerro Saroche
 
-Los procesos desarrollados para el tratamiento de la información rorrespondientes al parque Cerro Saroche estan disponibles en **/cerro_saroche/code/**:
+Los procesos desarrollados para el tratamiento de la información rorrespondientes al parque Cerro Saroche están disponibles en **/cerro_saroche/code/**:
 
 1. [Definición de la región](./cerro_saroche/code/1_definir_area_cerro_saroche.ipynb).
 2. [Descarga de datos para la Precipitación Total](./cerro_saroche/code/2_descargar_cdsapi_data.py).
@@ -135,7 +138,7 @@ Los procesos desarrollados para el tratamiento de la información rorrespondient
 
 ### El Parque Nacional Terepaima
 
-Los procesos desarrollados para el parque Terepaima estan disponibles en **/terepaima/code/**:
+Los procesos desarrollados para el parque Terepaima están disponibles en **/terepaima/code/**:
 
 1. [Definición de la región](./terepaima/code/1_definir_area_cerro_saroche.ipynb).
 2. [Descarga de datos para la Precipitación Total](./terepaima/code/2_descargar_cdsapi_data.py).
