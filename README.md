@@ -105,7 +105,7 @@ El proyecto permite replicar el estudio en parques venezolanos distinto al Cerro
 
 ### El Parque Nacional Cerro Saroche
 
-Los procesos desarrollados para el tratamiento de la información rorrespondientes al parque Cerro Saroche están disponibles en **/cerro_saroche/code/**:
+Los procesos desarrollados para el tratamiento de la información correspondientes al parque Cerro Saroche están disponibles en **/cerro_saroche/code/**:
 
 1. [Definición de la región](./cerro_saroche/code/1_definir_area_cerro_saroche.ipynb).
 2. [Descarga de datos para la Precipitación Total](./cerro_saroche/code/2_descargar_cdsapi_data.py).
