@@ -31,9 +31,10 @@ dependencies:
   - rioxarray==0.11.1
   - xarray==0.20.1
   - cftime==1.5.1.1
-  - pymongo=4.2.0
   - jupyter==1.0.0
   - dask-core==2022.5.0
   - cfgrib==0.9.10.1
   - pip==22.2.1
+  - pip:
+    - pymongo[gssapi,aws,ocsp,snappy,srv,tls,zstd,encryption]==4.2.0
   

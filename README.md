@@ -31,6 +31,9 @@ Primeramente, se recomienda generar el environment del proyecto utilizando:
 
 ~~~
 conda env create -f environment.yml
+conda env create -f ./environment.yml
+conda activate gee_metview
+conda env update --file ./environment.yml --prune
 ~~~
 
 Posteriormenmte, es necesario la creación de un archivo **config.yml** que disponga de las siguientes variables para iniciar sesión en la NASA, Copernicus y MongoDb:
